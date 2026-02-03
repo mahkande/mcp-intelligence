@@ -32,11 +32,9 @@ env.bak/
 venv.bak/
 
 # VS Code
-.vscode/extensions.json
-.vscode/tasks.json
-.vscode/launch.json
-.vscode/*.log
+.vscode/
 *.code-workspace
+
 
 # Debugging and Logs
 *.log
@@ -61,6 +59,36 @@ mcp_server.log
 tool_advert_debug.log
 import_check*.py
 test_discovery.py
+node_modules/
+.pytest_cache/
+input.txt
+demo_sample_repo/
+reports/
+tickets/
+.mcp.json
+analyze_*.py
+debug_*.py
+import_check*.py
+test_discovery.py
+test_mcp_client.py
+update_instructions.py
+verify_mcp.py
+security_scan.py
+clean_reset.py
+fix_config.py
+mcp_trace.py
+logger_config.py
+npm_search.json
+*.md
+!README.md
+!ARCHITECTURE.md
+!docs/**/*.md
+.clinerules
+.cursorrules
+.mcp-rules.md
+
+
+
 
 
 # System
