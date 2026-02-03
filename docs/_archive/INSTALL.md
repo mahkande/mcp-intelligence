@@ -1,0 +1,155 @@
+# MCP Code Intelligence - Installation Guide
+
+Unified CLI to install and manage mcp-code-intelligence in any project.
+
+## 🚀 Quick Start
+
+### PyPI Installation (Recommended)
+```bash
+# Install via pip
+pip install mcp-code-intelligence
+
+# Install in current directory
+mcp-code-intelligence install
+
+# Install with options
+mcp-code-intelligence install --no-mcp --force
+```
+
+### Development Installation
+```bash
+# Clone and use directly
+git clone https://github.com/bobmatnyc/mcp-code-intelligence.git
+cd mcp-code-intelligence
+uv run mcp-code-intelligence install
+```
+
+The `mcp-code-intelligence install` command provides complete one-step setup that:
+
+- ✅ **Initializes** vector database and configuration
+- ✅ **Auto-detects** project languages and file types
+- ✅ **Indexes** your entire codebase automatically
+- ✅ **Sets up** auto-indexing for file changes
+- ✅ **Installs** Claude Code MCP integration with project-scoped `.mcp.json`
+- ✅ **Creates** team-shareable configuration
+
+## 📋 Usage
+
+### Basic Installation
+```bash
+# Install in current directory (default behavior)
+mcp-code-intelligence install
+
+# Install in specific directory
+mcp-code-intelligence install ~/my-project
+
+# Install with options
+mcp-code-intelligence install --no-mcp --force
+
+# Install with custom extensions
+mcp-code-intelligence install --extensions .py,.js,.ts
+```
+
+### Demo & Testing
+```bash
+# Run complete demo with sample project
+./mcp-code-intelligence-install demo
+```
+
+### Shell Integration Setup
+```bash
+# Show shell integration commands
+./mcp-code-intelligence-install shell-setup
+```
+
+### Demo
+```bash
+# Run installation demo with sample project
+mcp-code-intelligence demo
+```
+
+### Shell Integration (Development)
+For development, you can set up shell aliases:
+```bash
+# Source the aliases directly
+source shell-aliases.sh
+```
+
+After setting up shell integration, you can use:
+```bash
+mcp-code-intelligence --help           # Run from development build
+mcp-install                        # Install in current directory
+mcp-demo                           # Run installation demo
+```
+
+### Help
+```bash
+# Show all available commands and options
+mcp-code-intelligence install --help
+mcp-code-intelligence --help
+```
+
+## 🎯 Available Commands
+
+- `install [directory] [options...]` - Install mcp-code-intelligence in a project
+- `demo` - Run installation demo with sample project
+- `shell-setup` - Show shell integration setup instructions
+- `--help` - Show help and usage information
+
+## 🔧 Install Options
+
+- `--force` - Re-initialize existing project
+- `--no-mcp` - Skip MCP integration
+- `--no-auto-index` - Skip initial indexing
+- `--extensions .py,.js,.ts` - Custom file extensions
+
+## 🧪 Complete Examples
+
+```bash
+# Install in current directory with all features (default)
+mcp-code-intelligence install
+
+# Install in specific project
+mcp-code-intelligence install ~/my-awesome-project
+
+# Install without MCP integration
+mcp-code-intelligence install --no-mcp
+
+# Force re-install with custom extensions
+mcp-code-intelligence install --force --extensions .py,.js,.ts,.go
+
+# Install in specific directory with options
+mcp-code-intelligence install ~/simple-project --no-mcp
+
+# Run demo to see it in action
+mcp-code-intelligence demo
+```
+
+## 🎉 What You Get
+
+After installation, your project will have:
+
+- **Semantic code search** - Find code by meaning, not just keywords
+- **Claude Code MCP integration** - Use vector search tools in Claude
+- **Auto-indexing** - Automatically updates when files change
+- **Team configuration** - Shareable `.mcp.json` for your team
+- **Rich CLI tools** - Search, status, and management commands
+
+## 🔍 Next Steps
+
+After installation:
+
+```bash
+cd your-project
+mcp-code-intelligence search "function that handles user authentication"
+mcp-code-intelligence status main
+```
+
+## 🛠 Development
+
+- **Source**: `/Users/masa/Projects/managed/mcp-code-intelligence`
+- **Main Script**: `mcp-code-intelligence-install` (unified installer)
+- **Compatible**: Both bash and zsh shells
+- **Features**: Install, demo, shell integration, help - all in one script
+
+

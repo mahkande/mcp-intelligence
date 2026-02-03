@@ -1,0 +1,23 @@
+{
+    "name": "Python",
+    "extensions": [
+        ".py",
+        ".pyi",
+        ".ipynb"
+    ],
+    "recommended_model": "jinaai/jina-embeddings-v3",
+    "tools": [
+        "ctags"
+    ],
+    "rag_guard": {
+        "ignore_patterns": [
+            "test_*.py",
+            "*_test.py",
+            "conftest.py",
+            "__pycache__",
+            "*.egg-info",
+            "venv",
+            ".venv"
+        ]
+    }
+}

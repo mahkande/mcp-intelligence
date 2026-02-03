@@ -1,0 +1,31 @@
+{
+    "name": "Dart/Flutter",
+    "extensions": [
+        ".dart"
+    ],
+    "recommended_model": "jinaai/jina-embeddings-v3",
+    "dependencies": [
+        {
+            "name": "Dart LSP",
+            "check_cmd": "dart --version",
+            "install_cmd": "echo 'Please install Dart SDK from https://dart.dev/get-dart'"
+        }
+    ],
+    "tools": [
+        "ctags"
+    ],
+    "rag_guard": {
+        "ignore_patterns": [
+            ".dart_tool",
+            "build",
+            "ios",
+            "android",
+            "web",
+            "linux",
+            "macos",
+            "windows",
+            "*.g.dart",
+            "*.freezed.dart"
+        ]
+    }
+}

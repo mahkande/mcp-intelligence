@@ -1,0 +1,9 @@
+{
+  "mcpServers": {},
+  "languageLsps": {
+    "python": {
+      "command": "python",
+      "args": ["-m", "pylsp"]
+    }
+  }
+}

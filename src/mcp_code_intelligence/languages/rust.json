@@ -1,0 +1,24 @@
+{
+    "name": "Rust",
+    "extensions": [
+        ".rs"
+    ],
+    "recommended_model": "jinaai/jina-embeddings-v3",
+    "dependencies": [
+        {
+            "name": "Rust Analyzer",
+            "check_cmd": "rust-analyzer --version",
+            "install_cmd": "rustup component add rust-analyzer"
+        }
+    ],
+    "tools": [
+        "ctags"
+    ],
+    "rag_guard": {
+        "ignore_patterns": [
+            "target",
+            "Cargo.lock",
+            "**/*.rs.bk"
+        ]
+    }
+}

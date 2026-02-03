@@ -1,0 +1,24 @@
+{
+    "name": "Go",
+    "extensions": [
+        ".go"
+    ],
+    "recommended_model": "jinaai/jina-embeddings-v3",
+    "dependencies": [
+        {
+            "name": "Gopls",
+            "check_cmd": "gopls version",
+            "install_cmd": "go install golang.org/x/tools/gopls@latest"
+        }
+    ],
+    "tools": [
+        "ctags"
+    ],
+    "rag_guard": {
+        "ignore_patterns": [
+            "vendor",
+            "go.sum",
+            "pkg"
+        ]
+    }
+}

@@ -1,0 +1,27 @@
+{
+    "name": "Java",
+    "extensions": [
+        ".java",
+        ".jar"
+    ],
+    "recommended_model": "jinaai/jina-embeddings-v3",
+    "dependencies": [
+        {
+            "name": "JDTLS",
+            "check_cmd": "jdtls --version",
+            "install_cmd": "echo 'Please install Eclipse JDTLS'"
+        }
+    ],
+    "tools": [
+        "ctags"
+    ],
+    "rag_guard": {
+        "ignore_patterns": [
+            "target",
+            ".gradle",
+            ".settings",
+            "bin",
+            "build"
+        ]
+    }
+}

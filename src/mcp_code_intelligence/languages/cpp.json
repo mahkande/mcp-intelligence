@@ -1,0 +1,31 @@
+{
+    "name": "C/C++",
+    "extensions": [
+        ".c",
+        ".cpp",
+        ".cc",
+        ".h",
+        ".hpp"
+    ],
+    "recommended_model": "jinaai/jina-embeddings-v3",
+    "dependencies": [
+        {
+            "name": "Clangd",
+            "check_cmd": "clangd --version",
+            "install_cmd": "echo 'Please install LLVM/Clangd from https://clangd.llvm.org/installation.html'"
+        }
+    ],
+    "tools": [
+        "ctags"
+    ],
+    "rag_guard": {
+        "ignore_patterns": [
+            "build",
+            "CMakeFiles",
+            "*.o",
+            "*.obj",
+            "*.a",
+            "*.lib"
+        ]
+    }
+}

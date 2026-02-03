@@ -1,0 +1,1398 @@
+{
+  "top_fan_out": [
+    [
+      "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\search.py",
+      {
+        "lines": 1187,
+        "imports_count": 22,
+        "classes": [
+          "SemanticSearchEngine",
+          "_DefaultQP"
+        ],
+        "functions": [
+          "__init__",
+          "_is_rust_panic_error",
+          "_is_corruption_error",
+          "_preprocess_query",
+          "_get_adaptive_threshold",
+          "analyze_query",
+          "suggest_related_queries",
+          "_calculate_result_quality",
+          "_extract_function_content",
+          "clear_cache",
+          "get_cache_info"
+        ],
+        "fan_out": 8,
+        "fan_in": 1
+      }
+    ],
+    [
+      "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\indexer.py",
+      {
+        "lines": 1941,
+        "imports_count": 33,
+        "classes": [
+          "SemanticIndexer"
+        ],
+        "functions": [
+          "cleanup_stale_locks",
+          "_parse_file_standalone",
+          "__init__",
+          "_default_collectors",
+          "_collect_metrics",
+          "_estimate_cognitive_complexity",
+          "_estimate_cyclomatic_complexity",
+          "_estimate_nesting_depth",
+          "_load_index_metadata",
+          "_save_index_metadata",
+          "_prioritize_files",
+          "_get_git_modified_files",
+          "_calculate_file_hash",
+          "_needs_reindexing",
+          "_find_indexable_files",
+          "_scan_files_sync",
+          "_should_index_file",
+          "_should_ignore_path",
+          "add_ignore_pattern",
+          "remove_ignore_pattern",
+          "get_ignore_patterns",
+          "get_index_version",
+          "needs_reindex_for_version",
+          "_build_chunk_hierarchy",
+          "_write_indexing_run_header",
+          "_apply_onnx_thread_limits",
+          "_restore_onnx_thread_limits",
+          "score_file"
+        ],
+        "fan_out": 6,
+        "fan_in": 3
+      }
+    ],
+    [
+      "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\factory.py",
+      {
+        "lines": 322,
+        "imports_count": 15,
+        "classes": [
+          "ComponentBundle",
+          "ComponentFactory",
+          "DatabaseContext",
+          "ConfigurationService"
+        ],
+        "functions": [
+          "handle_cli_errors",
+          "create_project_manager",
+          "load_config",
+          "create_embedding_function",
+          "create_database",
+          "create_indexer",
+          "create_search_engine",
+          "create_auto_indexer",
+          "__init__",
+          "decorator",
+          "__init__",
+          "project_manager",
+          "config",
+          "ensure_initialized",
+          "reload_config",
+          "save_config",
+          "sync_wrapper"
+        ],
+        "fan_out": 5,
+        "fan_in": 0
+      }
+    ],
+    [
+      "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\database\\pooling.py",
+      {
+        "lines": 502,
+        "imports_count": 12,
+        "classes": [
+          "PooledChromaVectorDatabase"
+        ],
+        "functions": [
+          "__init__",
+          "get_pool_stats"
+        ],
+        "fan_out": 5,
+        "fan_in": 1
+      }
+    ],
+    [
+      "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\database\\chroma.py",
+      {
+        "lines": 878,
+        "imports_count": 11,
+        "classes": [
+          "ChromaVectorDatabase"
+        ],
+        "functions": [
+          "__init__",
+          "_build_where_clause",
+          "_metadata_to_chunk"
+        ],
+        "fan_out": 4,
+        "fan_in": 2
+      }
+    ],
+    [
+      "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\database\\__init__.py",
+      {
+        "lines": 12,
+        "imports_count": 3,
+        "classes": [],
+        "functions": [],
+        "fan_out": 3,
+        "fan_in": 0
+      }
+    ],
+    [
+      "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\llm_client.py",
+      {
+        "lines": 804,
+        "imports_count": 9,
+        "classes": [
+          "LLMClient"
+        ],
+        "functions": [
+          "__init__",
+          "_format_results_for_analysis",
+          "_parse_ranking_response"
+        ],
+        "fan_out": 2,
+        "fan_in": 1
+      }
+    ],
+    [
+      "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\llm_factory.py",
+      {
+        "lines": 79,
+        "imports_count": 6,
+        "classes": [],
+        "functions": [
+          "wire_llm_to_server"
+        ],
+        "fan_out": 2,
+        "fan_in": 0
+      }
+    ],
+    [
+      "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\project.py",
+      {
+        "lines": 372,
+        "imports_count": 11,
+        "classes": [
+          "ProjectManager"
+        ],
+        "functions": [
+          "__init__",
+          "_detect_project_root",
+          "is_initialized",
+          "initialize",
+          "load_config",
+          "save_config",
+          "config",
+          "detect_languages",
+          "count_indexable_files",
+          "get_project_info",
+          "_iter_source_files",
+          "_should_ignore_path"
+        ],
+        "fan_out": 2,
+        "fan_in": 1
+      }
+    ],
+    [
+      "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\services\\reranker.py",
+      {
+        "lines": 117,
+        "imports_count": 8,
+        "classes": [
+          "LazyHFReRanker",
+          "NoopReranker"
+        ],
+        "functions": [
+          "get_global_reranker",
+          "__init__",
+          "_ensure_loaded",
+          "_sync_rerank"
+        ],
+        "fan_out": 2,
+        "fan_in": 1
+      }
+    ]
+  ],
+  "top_fan_in": [
+    [
+      "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\models.py",
+      {
+        "lines": 422,
+        "imports_count": 5,
+        "classes": [
+          "CodeChunk",
+          "SearchResult",
+          "IndexStats",
+          "Directory",
+          "ProjectInfo",
+          "Config",
+          "Config"
+        ],
+        "functions": [
+          "__post_init__",
+          "id",
+          "line_count",
+          "to_dict",
+          "from_dict",
+          "line_count",
+          "location",
+          "calculate_quality_score",
+          "to_dict",
+          "to_dict",
+          "__post_init__",
+          "id",
+          "to_dict",
+          "from_dict",
+          "to_dict"
+        ],
+        "fan_out": 0,
+        "fan_in": 11
+      }
+    ],
+    [
+      "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\exceptions.py",
+      {
+        "lines": 102,
+        "imports_count": 1,
+        "classes": [
+          "MCPCodeIntelligenceError",
+          "DatabaseError",
+          "DatabaseInitializationError",
+          "DatabaseNotInitializedError",
+          "ConnectionPoolError",
+          "DocumentAdditionError",
+          "SearchError",
+          "IndexCorruptionError",
+          "RustPanicError",
+          "ParsingError",
+          "EmbeddingError",
+          "ConfigurationError",
+          "ProjectError",
+          "ProjectNotFoundError",
+          "ProjectInitializationError"
+        ],
+        "functions": [
+          "__init__"
+        ],
+        "fan_out": 0,
+        "fan_in": 10
+      }
+    ],
+    [
+      "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\indexer.py",
+      {
+        "lines": 1941,
+        "imports_count": 33,
+        "classes": [
+          "SemanticIndexer"
+        ],
+        "functions": [
+          "cleanup_stale_locks",
+          "_parse_file_standalone",
+          "__init__",
+          "_default_collectors",
+          "_collect_metrics",
+          "_estimate_cognitive_complexity",
+          "_estimate_cyclomatic_complexity",
+          "_estimate_nesting_depth",
+          "_load_index_metadata",
+          "_save_index_metadata",
+          "_prioritize_files",
+          "_get_git_modified_files",
+          "_calculate_file_hash",
+          "_needs_reindexing",
+          "_find_indexable_files",
+          "_scan_files_sync",
+          "_should_index_file",
+          "_should_ignore_path",
+          "add_ignore_pattern",
+          "remove_ignore_pattern",
+          "get_ignore_patterns",
+          "get_index_version",
+          "needs_reindex_for_version",
+          "_build_chunk_hierarchy",
+          "_write_indexing_run_header",
+          "_apply_onnx_thread_limits",
+          "_restore_onnx_thread_limits",
+          "score_file"
+        ],
+        "fan_out": 6,
+        "fan_in": 3
+      }
+    ],
+    [
+      "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\interfaces.py",
+      {
+        "lines": 48,
+        "imports_count": 3,
+        "classes": [
+          "QueryProcessor",
+          "RerankerService",
+          "ResilienceManager"
+        ],
+        "functions": [],
+        "fan_out": 1,
+        "fan_in": 3
+      }
+    ],
+    [
+      "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\database\\base.py",
+      {
+        "lines": 181,
+        "imports_count": 4,
+        "classes": [
+          "EmbeddingFunction",
+          "VectorDatabase"
+        ],
+        "functions": [
+          "__call__"
+        ],
+        "fan_out": 1,
+        "fan_in": 3
+      }
+    ],
+    [
+      "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\auto_indexer.py",
+      {
+        "lines": 299,
+        "imports_count": 7,
+        "classes": [
+          "AutoIndexer",
+          "SearchTriggeredIndexer",
+          "PeriodicIndexChecker"
+        ],
+        "functions": [
+          "__init__",
+          "get_staleness_info",
+          "__init__",
+          "get_search_stats",
+          "__init__",
+          "time_until_next_check"
+        ],
+        "fan_out": 1,
+        "fan_in": 2
+      }
+    ],
+    [
+      "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\guards.py",
+      {
+        "lines": 179,
+        "imports_count": 5,
+        "classes": [
+          "RAGGuard"
+        ],
+        "functions": [
+          "__init__",
+          "set_active_files",
+          "should_index_path",
+          "should_index_content",
+          "is_low_signal_chunk",
+          "apply_search_penalties",
+          "filter_scope"
+        ],
+        "fan_out": 1,
+        "fan_in": 2
+      }
+    ],
+    [
+      "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\relationships.py",
+      {
+        "lines": 534,
+        "imports_count": 13,
+        "classes": [
+          "RelationshipStore"
+        ],
+        "functions": [
+          "extract_function_calls",
+          "extract_chunk_name",
+          "__init__",
+          "_compute_caller_relationships",
+          "load",
+          "exists",
+          "invalidate"
+        ],
+        "fan_out": 1,
+        "fan_in": 2
+      }
+    ],
+    [
+      "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\database\\chroma.py",
+      {
+        "lines": 878,
+        "imports_count": 11,
+        "classes": [
+          "ChromaVectorDatabase"
+        ],
+        "functions": [
+          "__init__",
+          "_build_where_clause",
+          "_metadata_to_chunk"
+        ],
+        "fan_out": 4,
+        "fan_in": 2
+      }
+    ],
+    [
+      "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\boilerplate.py",
+      {
+        "lines": 186,
+        "imports_count": 1,
+        "classes": [
+          "BoilerplateFilter"
+        ],
+        "functions": [
+          "is_boilerplate",
+          "get_penalty"
+        ],
+        "fan_out": 0,
+        "fan_in": 1
+      }
+    ]
+  ],
+  "top_imports": [
+    [
+      "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\indexer.py",
+      {
+        "lines": 1941,
+        "imports_count": 33,
+        "classes": [
+          "SemanticIndexer"
+        ],
+        "functions": [
+          "cleanup_stale_locks",
+          "_parse_file_standalone",
+          "__init__",
+          "_default_collectors",
+          "_collect_metrics",
+          "_estimate_cognitive_complexity",
+          "_estimate_cyclomatic_complexity",
+          "_estimate_nesting_depth",
+          "_load_index_metadata",
+          "_save_index_metadata",
+          "_prioritize_files",
+          "_get_git_modified_files",
+          "_calculate_file_hash",
+          "_needs_reindexing",
+          "_find_indexable_files",
+          "_scan_files_sync",
+          "_should_index_file",
+          "_should_ignore_path",
+          "add_ignore_pattern",
+          "remove_ignore_pattern",
+          "get_ignore_patterns",
+          "get_index_version",
+          "needs_reindex_for_version",
+          "_build_chunk_hierarchy",
+          "_write_indexing_run_header",
+          "_apply_onnx_thread_limits",
+          "_restore_onnx_thread_limits",
+          "score_file"
+        ],
+        "fan_out": 6,
+        "fan_in": 3
+      }
+    ],
+    [
+      "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\search.py",
+      {
+        "lines": 1187,
+        "imports_count": 22,
+        "classes": [
+          "SemanticSearchEngine",
+          "_DefaultQP"
+        ],
+        "functions": [
+          "__init__",
+          "_is_rust_panic_error",
+          "_is_corruption_error",
+          "_preprocess_query",
+          "_get_adaptive_threshold",
+          "analyze_query",
+          "suggest_related_queries",
+          "_calculate_result_quality",
+          "_extract_function_content",
+          "clear_cache",
+          "get_cache_info"
+        ],
+        "fan_out": 8,
+        "fan_in": 1
+      }
+    ],
+    [
+      "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\factory.py",
+      {
+        "lines": 322,
+        "imports_count": 15,
+        "classes": [
+          "ComponentBundle",
+          "ComponentFactory",
+          "DatabaseContext",
+          "ConfigurationService"
+        ],
+        "functions": [
+          "handle_cli_errors",
+          "create_project_manager",
+          "load_config",
+          "create_embedding_function",
+          "create_database",
+          "create_indexer",
+          "create_search_engine",
+          "create_auto_indexer",
+          "__init__",
+          "decorator",
+          "__init__",
+          "project_manager",
+          "config",
+          "ensure_initialized",
+          "reload_config",
+          "save_config",
+          "sync_wrapper"
+        ],
+        "fan_out": 5,
+        "fan_in": 0
+      }
+    ],
+    [
+      "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\relationships.py",
+      {
+        "lines": 534,
+        "imports_count": 13,
+        "classes": [
+          "RelationshipStore"
+        ],
+        "functions": [
+          "extract_function_calls",
+          "extract_chunk_name",
+          "__init__",
+          "_compute_caller_relationships",
+          "load",
+          "exists",
+          "invalidate"
+        ],
+        "fan_out": 1,
+        "fan_in": 2
+      }
+    ],
+    [
+      "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\database\\pooling.py",
+      {
+        "lines": 502,
+        "imports_count": 12,
+        "classes": [
+          "PooledChromaVectorDatabase"
+        ],
+        "functions": [
+          "__init__",
+          "get_pool_stats"
+        ],
+        "fan_out": 5,
+        "fan_in": 1
+      }
+    ],
+    [
+      "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\connection_pool.py",
+      {
+        "lines": 379,
+        "imports_count": 11,
+        "classes": [
+          "PooledConnection",
+          "ChromaConnectionPool"
+        ],
+        "functions": [
+          "age",
+          "idle_time",
+          "__init__",
+          "_is_connection_valid",
+          "get_stats",
+          "_validate_connection",
+          "_connections",
+          "_max_connections",
+          "_min_connections"
+        ],
+        "fan_out": 1,
+        "fan_in": 1
+      }
+    ],
+    [
+      "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\embeddings.py",
+      {
+        "lines": 362,
+        "imports_count": 11,
+        "classes": [
+          "EmbeddingCache",
+          "CodeBERTEmbeddingFunction",
+          "BatchEmbeddingProcessor"
+        ],
+        "functions": [
+          "_configure_tokenizers_parallelism",
+          "create_embedding_function",
+          "__init__",
+          "_hash_content",
+          "_add_to_memory_cache",
+          "clear_memory_cache",
+          "get_cache_stats",
+          "__init__",
+          "name",
+          "__call__",
+          "_generate_embeddings",
+          "__init__",
+          "get_stats"
+        ],
+        "fan_out": 1,
+        "fan_in": 1
+      }
+    ],
+    [
+      "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\project.py",
+      {
+        "lines": 372,
+        "imports_count": 11,
+        "classes": [
+          "ProjectManager"
+        ],
+        "functions": [
+          "__init__",
+          "_detect_project_root",
+          "is_initialized",
+          "initialize",
+          "load_config",
+          "save_config",
+          "config",
+          "detect_languages",
+          "count_indexable_files",
+          "get_project_info",
+          "_iter_source_files",
+          "_should_ignore_path"
+        ],
+        "fan_out": 2,
+        "fan_in": 1
+      }
+    ],
+    [
+      "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\watcher.py",
+      {
+        "lines": 323,
+        "imports_count": 11,
+        "classes": [
+          "CodeFileHandler",
+          "FileWatcher",
+          "WatcherManager"
+        ],
+        "functions": [
+          "__init__",
+          "should_process_file",
+          "on_modified",
+          "on_created",
+          "on_deleted",
+          "on_moved",
+          "_schedule_change",
+          "__init__",
+          "_get_ignore_patterns",
+          "__init__",
+          "is_watching"
+        ],
+        "fan_out": 1,
+        "fan_in": 0
+      }
+    ],
+    [
+      "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\database\\chroma.py",
+      {
+        "lines": 878,
+        "imports_count": 11,
+        "classes": [
+          "ChromaVectorDatabase"
+        ],
+        "functions": [
+          "__init__",
+          "_build_where_clause",
+          "_metadata_to_chunk"
+        ],
+        "fan_out": 4,
+        "fan_in": 2
+      }
+    ]
+  ],
+  "top_lines": [
+    [
+      "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\indexer.py",
+      {
+        "lines": 1941,
+        "imports_count": 33,
+        "classes": [
+          "SemanticIndexer"
+        ],
+        "functions": [
+          "cleanup_stale_locks",
+          "_parse_file_standalone",
+          "__init__",
+          "_default_collectors",
+          "_collect_metrics",
+          "_estimate_cognitive_complexity",
+          "_estimate_cyclomatic_complexity",
+          "_estimate_nesting_depth",
+          "_load_index_metadata",
+          "_save_index_metadata",
+          "_prioritize_files",
+          "_get_git_modified_files",
+          "_calculate_file_hash",
+          "_needs_reindexing",
+          "_find_indexable_files",
+          "_scan_files_sync",
+          "_should_index_file",
+          "_should_ignore_path",
+          "add_ignore_pattern",
+          "remove_ignore_pattern",
+          "get_ignore_patterns",
+          "get_index_version",
+          "needs_reindex_for_version",
+          "_build_chunk_hierarchy",
+          "_write_indexing_run_header",
+          "_apply_onnx_thread_limits",
+          "_restore_onnx_thread_limits",
+          "score_file"
+        ],
+        "fan_out": 6,
+        "fan_in": 3
+      }
+    ],
+    [
+      "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\search.py",
+      {
+        "lines": 1187,
+        "imports_count": 22,
+        "classes": [
+          "SemanticSearchEngine",
+          "_DefaultQP"
+        ],
+        "functions": [
+          "__init__",
+          "_is_rust_panic_error",
+          "_is_corruption_error",
+          "_preprocess_query",
+          "_get_adaptive_threshold",
+          "analyze_query",
+          "suggest_related_queries",
+          "_calculate_result_quality",
+          "_extract_function_content",
+          "clear_cache",
+          "get_cache_info"
+        ],
+        "fan_out": 8,
+        "fan_in": 1
+      }
+    ],
+    [
+      "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\database\\chroma.py",
+      {
+        "lines": 878,
+        "imports_count": 11,
+        "classes": [
+          "ChromaVectorDatabase"
+        ],
+        "functions": [
+          "__init__",
+          "_build_where_clause",
+          "_metadata_to_chunk"
+        ],
+        "fan_out": 4,
+        "fan_in": 2
+      }
+    ],
+    [
+      "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\llm_client.py",
+      {
+        "lines": 804,
+        "imports_count": 9,
+        "classes": [
+          "LLMClient"
+        ],
+        "functions": [
+          "__init__",
+          "_format_results_for_analysis",
+          "_parse_ranking_response"
+        ],
+        "fan_out": 2,
+        "fan_in": 1
+      }
+    ],
+    [
+      "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\tool_registry.py",
+      {
+        "lines": 593,
+        "imports_count": 7,
+        "classes": [],
+        "functions": [
+          "get_tool_definitions",
+          "get_mcp_tools",
+          "get_llm_tool_specs"
+        ],
+        "fan_out": 0,
+        "fan_in": 0
+      }
+    ],
+    [
+      "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\relationships.py",
+      {
+        "lines": 534,
+        "imports_count": 13,
+        "classes": [
+          "RelationshipStore"
+        ],
+        "functions": [
+          "extract_function_calls",
+          "extract_chunk_name",
+          "__init__",
+          "_compute_caller_relationships",
+          "load",
+          "exists",
+          "invalidate"
+        ],
+        "fan_out": 1,
+        "fan_in": 2
+      }
+    ],
+    [
+      "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\database\\pooling.py",
+      {
+        "lines": 502,
+        "imports_count": 12,
+        "classes": [
+          "PooledChromaVectorDatabase"
+        ],
+        "functions": [
+          "__init__",
+          "get_pool_stats"
+        ],
+        "fan_out": 5,
+        "fan_in": 1
+      }
+    ],
+    [
+      "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\models.py",
+      {
+        "lines": 422,
+        "imports_count": 5,
+        "classes": [
+          "CodeChunk",
+          "SearchResult",
+          "IndexStats",
+          "Directory",
+          "ProjectInfo",
+          "Config",
+          "Config"
+        ],
+        "functions": [
+          "__post_init__",
+          "id",
+          "line_count",
+          "to_dict",
+          "from_dict",
+          "line_count",
+          "location",
+          "calculate_quality_score",
+          "to_dict",
+          "to_dict",
+          "__post_init__",
+          "id",
+          "to_dict",
+          "from_dict",
+          "to_dict"
+        ],
+        "fan_out": 0,
+        "fan_in": 11
+      }
+    ],
+    [
+      "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\config_utils.py",
+      {
+        "lines": 395,
+        "imports_count": 6,
+        "classes": [
+          "ConfigManager"
+        ],
+        "functions": [
+          "get_openrouter_api_key",
+          "save_openrouter_api_key",
+          "delete_openrouter_api_key",
+          "get_openai_api_key",
+          "save_openai_api_key",
+          "delete_openai_api_key",
+          "get_preferred_llm_provider",
+          "save_preferred_llm_provider",
+          "get_config_file_path",
+          "__init__",
+          "_ensure_config_dir",
+          "_set_secure_permissions",
+          "_mask_sensitive_value",
+          "load_config",
+          "save_config",
+          "get_value",
+          "set_value",
+          "delete_value"
+        ],
+        "fan_out": 0,
+        "fan_in": 1
+      }
+    ],
+    [
+      "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\git.py",
+      {
+        "lines": 380,
+        "imports_count": 3,
+        "classes": [
+          "GitError",
+          "GitNotAvailableError",
+          "GitNotRepoError",
+          "GitReferenceError",
+          "GitManager"
+        ],
+        "functions": [
+          "__init__",
+          "is_git_available",
+          "is_git_repo",
+          "get_changed_files",
+          "get_diff_files",
+          "ref_exists",
+          "get_current_branch"
+        ],
+        "fan_out": 0,
+        "fan_in": 1
+      }
+    ]
+  ],
+  "god_candidates": [
+    [
+      "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\indexer.py",
+      {
+        "methods": 43,
+        "fan_in": 3,
+        "fan_out": 6,
+        "lines": 1941,
+        "score": 70.705
+      }
+    ],
+    [
+      "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\search.py",
+      {
+        "methods": 23,
+        "fan_in": 1,
+        "fan_out": 8,
+        "lines": 1187,
+        "score": 46.935
+      }
+    ],
+    [
+      "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\models.py",
+      {
+        "methods": 15,
+        "fan_in": 11,
+        "fan_out": 0,
+        "lines": 422,
+        "score": 39.11
+      }
+    ],
+    [
+      "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\database\\chroma.py",
+      {
+        "methods": 17,
+        "fan_in": 2,
+        "fan_out": 4,
+        "lines": 878,
+        "score": 33.39
+      }
+    ],
+    [
+      "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\factory.py",
+      {
+        "methods": 21,
+        "fan_in": 0,
+        "fan_out": 5,
+        "lines": 322,
+        "score": 32.61
+      }
+    ],
+    [
+      "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\database\\pooling.py",
+      {
+        "methods": 15,
+        "fan_in": 1,
+        "fan_out": 5,
+        "lines": 502,
+        "score": 29.509999999999998
+      }
+    ],
+    [
+      "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\connection_pool.py",
+      {
+        "methods": 21,
+        "fan_in": 1,
+        "fan_out": 1,
+        "lines": 379,
+        "score": 26.895
+      }
+    ],
+    [
+      "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\database\\base.py",
+      {
+        "methods": 17,
+        "fan_in": 3,
+        "fan_out": 1,
+        "lines": 181,
+        "score": 25.905
+      }
+    ],
+    [
+      "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\watcher.py",
+      {
+        "methods": 22,
+        "fan_in": 0,
+        "fan_out": 1,
+        "lines": 323,
+        "score": 25.615
+      }
+    ],
+    [
+      "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\config_utils.py",
+      {
+        "methods": 18,
+        "fan_in": 1,
+        "fan_out": 0,
+        "lines": 395,
+        "score": 21.975
+      }
+    ],
+    [
+      "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\embeddings.py",
+      {
+        "methods": 16,
+        "fan_in": 1,
+        "fan_out": 1,
+        "lines": 362,
+        "score": 21.81
+      }
+    ],
+    [
+      "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\exceptions.py",
+      {
+        "methods": 1,
+        "fan_in": 10,
+        "fan_out": 0,
+        "lines": 102,
+        "score": 21.51
+      }
+    ],
+    [
+      "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\llm_client.py",
+      {
+        "methods": 10,
+        "fan_in": 1,
+        "fan_out": 2,
+        "lines": 804,
+        "score": 20.02
+      }
+    ],
+    [
+      "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\project.py",
+      {
+        "methods": 12,
+        "fan_in": 1,
+        "fan_out": 2,
+        "lines": 372,
+        "score": 19.86
+      }
+    ],
+    [
+      "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\directory_index.py",
+      {
+        "methods": 14,
+        "fan_in": 1,
+        "fan_out": 1,
+        "lines": 318,
+        "score": 19.59
+      }
+    ],
+    [
+      "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\auto_indexer.py",
+      {
+        "methods": 12,
+        "fan_in": 2,
+        "fan_out": 1,
+        "lines": 299,
+        "score": 19.495
+      }
+    ],
+    [
+      "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\relationships.py",
+      {
+        "methods": 10,
+        "fan_in": 2,
+        "fan_out": 1,
+        "lines": 534,
+        "score": 18.67
+      }
+    ],
+    [
+      "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\lsp_proxy.py",
+      {
+        "methods": 16,
+        "fan_in": 0,
+        "fan_out": 0,
+        "lines": 271,
+        "score": 17.355
+      }
+    ],
+    [
+      "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\git_hooks.py",
+      {
+        "methods": 13,
+        "fan_in": 0,
+        "fan_out": 0,
+        "lines": 348,
+        "score": 14.74
+      }
+    ],
+    [
+      "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\scheduler.py",
+      {
+        "methods": 10,
+        "fan_in": 1,
+        "fan_out": 0,
+        "lines": 333,
+        "score": 13.665
+      }
+    ]
+  ],
+  "semantic_duplicates": [
+    {
+      "a": {
+        "file": "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\config_utils.py",
+        "name": "get_openrouter_api_key",
+        "body": "def get_openrouter_api_key(config_dir: Path | None = None) -> str | None:\n    \"\"\"Get OpenRouter API key from environment or config file.\n\n    Priority order:\n    1. OPENROUTER_API_KEY environment variable\n    2. openrouter_api_key in config file\n\n    Args:\n        config_dir: Config directory path (uses .mcp-code-intelligence in cwd if None)\n\n    Returns:\n        API key if found, None otherwise\n    \"\"\"\n    # Check environment variable first (highest priority)\n    api_key = os.environ.get(\"OPENROUTER_API_KEY\")\n    if api_key:\n        logger.debug(\"Using OpenRouter API key from environment variable\")\n        return api_key\n\n    # Check config file\n    if config_dir is None:\n        config_dir = Path.cwd() / \".mcp-code-intelligence\"\n\n    if not config_dir.exists():\n        logger.debug(f\"Config directory not found: {config_dir}\")\n        return None\n\n    manager = ConfigManager(config_dir)\n    api_key = manager.get_value(\"openrouter_api_key\")\n\n    if api_key:\n        logger.debug(\"Using OpenRouter API key from config file\")\n        return api_key\n\n    logger.debug(\"OpenRouter API key not found in environment or config\")\n    return None"
+      },
+      "b": {
+        "file": "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\config_utils.py",
+        "name": "get_openai_api_key",
+        "body": "def get_openai_api_key(config_dir: Path | None = None) -> str | None:\n    \"\"\"Get OpenAI API key from environment or config file.\n\n    Priority order:\n    1. OPENAI_API_KEY environment variable\n    2. openai_api_key in config file\n\n    Args:\n        config_dir: Config directory path (uses .mcp-code-intelligence in cwd if None)\n\n    Returns:\n        API key if found, None otherwise\n    \"\"\"\n    # Check environment variable first (highest priority)\n    api_key = os.environ.get(\"OPENAI_API_KEY\")\n    if api_key:\n        logger.debug(\"Using OpenAI API key from environment variable\")\n        return api_key\n\n    # Check config file\n    if config_dir is None:\n        config_dir = Path.cwd() / \".mcp-code-intelligence\"\n\n    if not config_dir.exists():\n        logger.debug(f\"Config directory not found: {config_dir}\")\n        return None\n\n    manager = ConfigManager(config_dir)\n    api_key = manager.get_value(\"openai_api_key\")\n\n    if api_key:\n        logger.debug(\"Using OpenAI API key from config file\")\n        return api_key\n\n    logger.debug(\"OpenAI API key not found in environment or config\")\n    return None"
+      },
+      "score": 0.968
+    },
+    {
+      "a": {
+        "file": "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\config_utils.py",
+        "name": "save_openrouter_api_key",
+        "body": "def save_openrouter_api_key(api_key: str, config_dir: Path) -> None:\n    \"\"\"Save OpenRouter API key to config file.\n\n    Args:\n        api_key: API key to save\n        config_dir: Config directory path\n\n    Raises:\n        ValueError: If api_key is empty\n        OSError: If file write fails\n    \"\"\"\n    if not api_key or not api_key.strip():\n        raise ValueError(\"API key cannot be empty\")\n\n    manager = ConfigManager(config_dir)\n    manager.set_value(\"openrouter_api_key\", api_key.strip())\n\n    logger.info(\n        f\"Saved OpenRouter API key to {manager.config_file} \"\n        f\"(last 4 chars: {api_key[-4:]})\"\n    )"
+      },
+      "b": {
+        "file": "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\config_utils.py",
+        "name": "save_openai_api_key",
+        "body": "def save_openai_api_key(api_key: str, config_dir: Path) -> None:\n    \"\"\"Save OpenAI API key to config file.\n\n    Args:\n        api_key: API key to save\n        config_dir: Config directory path\n\n    Raises:\n        ValueError: If api_key is empty\n        OSError: If file write fails\n    \"\"\"\n    if not api_key or not api_key.strip():\n        raise ValueError(\"API key cannot be empty\")\n\n    manager = ConfigManager(config_dir)\n    manager.set_value(\"openai_api_key\", api_key.strip())\n\n    logger.info(\n        f\"Saved OpenAI API key to {manager.config_file} (last 4 chars: {api_key[-4:]})\"\n    )"
+      },
+      "score": 0.964
+    },
+    {
+      "a": {
+        "file": "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\config_utils.py",
+        "name": "delete_openrouter_api_key",
+        "body": "def delete_openrouter_api_key(config_dir: Path) -> bool:\n    \"\"\"Delete OpenRouter API key from config file.\n\n    Args:\n        config_dir: Config directory path\n\n    Returns:\n        True if key was deleted, False if not found\n    \"\"\"\n    manager = ConfigManager(config_dir)\n    return manager.delete_value(\"openrouter_api_key\")"
+      },
+      "b": {
+        "file": "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\config_utils.py",
+        "name": "delete_openai_api_key",
+        "body": "def delete_openai_api_key(config_dir: Path) -> bool:\n    \"\"\"Delete OpenAI API key from config file.\n\n    Args:\n        config_dir: Config directory path\n\n    Returns:\n        True if key was deleted, False if not found\n    \"\"\"\n    manager = ConfigManager(config_dir)\n    return manager.delete_value(\"openai_api_key\")"
+      },
+      "score": 0.963
+    },
+    {
+      "a": {
+        "file": "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\connection_pool.py",
+        "name": "PooledConnection.age",
+        "body": "    def age(self) -> float:\n        \"\"\"Get the age of this connection in seconds.\"\"\"\n        return time.time() - self.created_at"
+      },
+      "b": {
+        "file": "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\connection_pool.py",
+        "name": "PooledConnection.idle_time",
+        "body": "    def idle_time(self) -> float:\n        \"\"\"Get the idle time of this connection in seconds.\"\"\"\n        return time.time() - self.last_used"
+      },
+      "score": 0.885
+    },
+    {
+      "a": {
+        "file": "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\connection_pool.py",
+        "name": "ChromaConnectionPool._max_connections",
+        "body": "    def _max_connections(self) -> int:\n        \"\"\"Alias for max_connections attribute (backward compatibility).\"\"\"\n        return self.max_connections"
+      },
+      "b": {
+        "file": "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\connection_pool.py",
+        "name": "ChromaConnectionPool._min_connections",
+        "body": "    def _min_connections(self) -> int:\n        \"\"\"Alias for min_connections attribute (backward compatibility).\"\"\"\n        return self.min_connections"
+      },
+      "score": 0.96
+    },
+    {
+      "a": {
+        "file": "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\factory.py",
+        "name": "handle_cli_errors",
+        "body": "def handle_cli_errors(operation_name: str) -> Callable[[F], F]:\n    \"\"\"Decorator for consistent CLI error handling.\n\n    Args:\n        operation_name: Name of the operation for error messages\n\n    Returns:\n        Decorator function\n    \"\"\"\n\n    def decorator(func: F) -> F:\n        @functools.wraps(func)\n        async def async_wrapper(*args, **kwargs):\n            try:\n                return await func(*args, **kwargs)\n            except Exception as e:\n                logger.error(f\"{operation_name} failed: {e}\")\n                print_error(f\"{operation_name} failed: {e}\")\n                raise typer.Exit(1)\n\n        @functools.wraps(func)\n        def sync_wrapper(*args, **kwargs):\n            try:\n                return func(*args, **kwargs)\n            except Exception as e:\n                logger.error(f\"{operation_name} failed: {e}\")\n                print_error(f\"{operation_name} failed: {e}\")\n                raise typer.Exit(1)\n\n        # Return appropriate wrapper based on function type\n        if hasattr(func, \"__code__\") and \"await\" in func.__code__.co_names:\n            return async_wrapper\n        else:\n            return sync_wrapper\n\n    return decorator"
+      },
+      "b": {
+        "file": "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\factory.py",
+        "name": "decorator",
+        "body": "    def decorator(func: F) -> F:\n        @functools.wraps(func)\n        async def async_wrapper(*args, **kwargs):\n            try:\n                return await func(*args, **kwargs)\n            except Exception as e:\n                logger.error(f\"{operation_name} failed: {e}\")\n                print_error(f\"{operation_name} failed: {e}\")\n                raise typer.Exit(1)\n\n        @functools.wraps(func)\n        def sync_wrapper(*args, **kwargs):\n            try:\n                return func(*args, **kwargs)\n            except Exception as e:\n                logger.error(f\"{operation_name} failed: {e}\")\n                print_error(f\"{operation_name} failed: {e}\")\n                raise typer.Exit(1)\n\n        # Return appropriate wrapper based on function type\n        if hasattr(func, \"__code__\") and \"await\" in func.__code__.co_names:\n            return async_wrapper\n        else:\n            return sync_wrapper"
+      },
+      "score": 0.875
+    },
+    {
+      "a": {
+        "file": "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\factory.py",
+        "name": "DatabaseContext.__aexit__",
+        "body": "    async def __aexit__(self, exc_type, exc_val, exc_tb) -> None:\n        \"\"\"Exit context and close database.\"\"\"\n        await self.database.close()"
+      },
+      "b": {
+        "file": "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\database\\base.py",
+        "name": "VectorDatabase.__aexit__",
+        "body": "    async def __aexit__(self, exc_type, exc_val, exc_tb) -> None:\n        \"\"\"Async context manager exit.\"\"\"\n        await self.close()"
+      },
+      "score": 0.865
+    },
+    {
+      "a": {
+        "file": "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\factory.py",
+        "name": "ConfigurationService.config",
+        "body": "    def config(self) -> ProjectConfig:\n        \"\"\"Get project configuration (lazy loaded).\"\"\"\n        if self._config is None:\n            self._config = self.project_manager.load_config()\n        return self._config"
+      },
+      "b": {
+        "file": "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\project.py",
+        "name": "ProjectManager.config",
+        "body": "    def config(self) -> ProjectConfig:\n        \"\"\"Get project configuration, loading if necessary.\"\"\"\n        if self._config is None:\n            self._config = self.load_config()\n        return self._config"
+      },
+      "score": 0.882
+    },
+    {
+      "a": {
+        "file": "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\factory.py",
+        "name": "async_wrapper",
+        "body": "        async def async_wrapper(*args, **kwargs):\n            try:\n                return await func(*args, **kwargs)\n            except Exception as e:\n                logger.error(f\"{operation_name} failed: {e}\")\n                print_error(f\"{operation_name} failed: {e}\")\n                raise typer.Exit(1)"
+      },
+      "b": {
+        "file": "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\factory.py",
+        "name": "sync_wrapper",
+        "body": "        def sync_wrapper(*args, **kwargs):\n            try:\n                return func(*args, **kwargs)\n            except Exception as e:\n                logger.error(f\"{operation_name} failed: {e}\")\n                print_error(f\"{operation_name} failed: {e}\")\n                raise typer.Exit(1)"
+      },
+      "score": 0.979
+    },
+    {
+      "a": {
+        "file": "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\models.py",
+        "name": "CodeChunk.line_count",
+        "body": "    def line_count(self) -> int:\n        \"\"\"Get the number of lines in this chunk.\"\"\"\n        return self.end_line - self.start_line + 1"
+      },
+      "b": {
+        "file": "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\models.py",
+        "name": "SearchResult.line_count",
+        "body": "    def line_count(self) -> int:\n        \"\"\"Get the number of lines in this result.\"\"\"\n        return self.end_line - self.start_line + 1"
+      },
+      "score": 0.967
+    },
+    {
+      "a": {
+        "file": "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\watcher.py",
+        "name": "CodeFileHandler.on_modified",
+        "body": "    def on_modified(self, event: FileSystemEvent) -> None:\n        \"\"\"Handle file modification.\"\"\"\n        if not event.is_directory and self.should_process_file(event.src_path):\n            self._schedule_change(event.src_path, \"modified\")"
+      },
+      "b": {
+        "file": "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\watcher.py",
+        "name": "CodeFileHandler.on_created",
+        "body": "    def on_created(self, event: FileSystemEvent) -> None:\n        \"\"\"Handle file creation.\"\"\"\n        if not event.is_directory and self.should_process_file(event.src_path):\n            self._schedule_change(event.src_path, \"created\")"
+      },
+      "score": 0.932
+    },
+    {
+      "a": {
+        "file": "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\watcher.py",
+        "name": "CodeFileHandler.on_modified",
+        "body": "    def on_modified(self, event: FileSystemEvent) -> None:\n        \"\"\"Handle file modification.\"\"\"\n        if not event.is_directory and self.should_process_file(event.src_path):\n            self._schedule_change(event.src_path, \"modified\")"
+      },
+      "b": {
+        "file": "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\watcher.py",
+        "name": "CodeFileHandler.on_deleted",
+        "body": "    def on_deleted(self, event: FileSystemEvent) -> None:\n        \"\"\"Handle file deletion.\"\"\"\n        if not event.is_directory and self.should_process_file(event.src_path):\n            self._schedule_change(event.src_path, \"deleted\")"
+      },
+      "score": 0.928
+    },
+    {
+      "a": {
+        "file": "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\watcher.py",
+        "name": "CodeFileHandler.on_created",
+        "body": "    def on_created(self, event: FileSystemEvent) -> None:\n        \"\"\"Handle file creation.\"\"\"\n        if not event.is_directory and self.should_process_file(event.src_path):\n            self._schedule_change(event.src_path, \"created\")"
+      },
+      "b": {
+        "file": "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\watcher.py",
+        "name": "CodeFileHandler.on_deleted",
+        "body": "    def on_deleted(self, event: FileSystemEvent) -> None:\n        \"\"\"Handle file deletion.\"\"\"\n        if not event.is_directory and self.should_process_file(event.src_path):\n            self._schedule_change(event.src_path, \"deleted\")"
+      },
+      "score": 0.949
+    },
+    {
+      "a": {
+        "file": "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\watcher.py",
+        "name": "FileWatcher.__aenter__",
+        "body": "    async def __aenter__(self):\n        \"\"\"Async context manager entry.\"\"\"\n        await self.start()\n        return self"
+      },
+      "b": {
+        "file": "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\database\\base.py",
+        "name": "VectorDatabase.__aenter__",
+        "body": "    async def __aenter__(self) -> \"VectorDatabase\":\n        \"\"\"Async context manager entry.\"\"\"\n        await self.initialize()\n        return self"
+      },
+      "score": 0.884
+    },
+    {
+      "a": {
+        "file": "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\watcher.py",
+        "name": "FileWatcher.__aexit__",
+        "body": "    async def __aexit__(self, exc_type, exc_val, exc_tb):\n        \"\"\"Async context manager exit.\"\"\"\n        await self.stop()"
+      },
+      "b": {
+        "file": "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\database\\base.py",
+        "name": "VectorDatabase.__aexit__",
+        "body": "    async def __aexit__(self, exc_type, exc_val, exc_tb) -> None:\n        \"\"\"Async context manager exit.\"\"\"\n        await self.close()"
+      },
+      "score": 0.942
+    },
+    {
+      "a": {
+        "file": "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\database\\chroma.py",
+        "name": "ChromaVectorDatabase.get_chunks_for_file",
+        "body": "    async def get_chunks_for_file(self, file_path: Path) -> list[CodeChunk]:\n        \"\"\"Get all chunks for a specific file.\"\"\"\n        if not self._collection:\n            raise DatabaseNotInitializedError(\"Database not initialized\")\n\n        try:\n            results = self._collection.get(\n                where={\"file_path\": str(file_path)},\n                include=[\"metadatas\", \"documents\"],\n            )\n\n            chunks = []\n            if results and results.get(\"ids\"):\n                for i, _ in enumerate(results[\"ids\"]):\n                    metadata = results[\"metadatas\"][i]\n                    content = results[\"documents\"][i]\n                    chunks.append(self._metadata_to_chunk(metadata, content))\n\n            return chunks\n\n        except Exception as e:\n            logger.error(f\"Failed to get chunks for file {file_path}: {e}\")\n            return []"
+      },
+      "b": {
+        "file": "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\database\\chroma.py",
+        "name": "ChromaVectorDatabase.get_chunks_by_hash",
+        "body": "    async def get_chunks_by_hash(self, content_hash: str) -> list[CodeChunk]:\n        \"\"\"Return chunks that match the provided content_hash.\"\"\"\n        if not self._collection:\n            raise DatabaseNotInitializedError(\"Database not initialized\")\n\n        try:\n            results = self._collection.get(\n                where={\"content_hash\": content_hash}, include=[\"metadatas\", \"documents\"]\n            )\n\n            chunks: list[CodeChunk] = []\n            if results and results.get(\"ids\"):\n                for i, _ in enumerate(results[\"ids\"]):\n                    metadata = results[\"metadatas\"][i]\n                    content = results[\"documents\"][i]\n                    chunks.append(self._metadata_to_chunk(metadata, content))\n\n            return chunks\n\n        except Exception as e:\n            logger.error(f\"Failed to lookup chunks by hash {content_hash}: {e}\")\n            return []"
+      },
+      "score": 0.864
+    },
+    {
+      "a": {
+        "file": "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\services\\reranker.py",
+        "name": "LazyHFReRanker.rerank",
+        "body": "    async def rerank(self, results: List[SearchResult], query: str) -> List[SearchResult]:\n        # No-op if transformers or model not configured\n        if not HAS_TRANSFORMERS or not self.model_name:\n            return results\n\n        loop = asyncio.get_event_loop()\n\n        def _sync_rerank():\n            try:\n                self._ensure_loaded()\n                if self._model is None or self._tokenizer is None:\n                    return results\n\n                # Prepare pairwise inputs: [query || candidate_text]\n                inputs = []\n                for r in results:\n                    # Heuristic: prefer short preview if present, else file path\n                    preview = getattr(r, \"preview_text\", None) or getattr(r, \"text\", None) or str(getattr(r, \"file_path\", \"\"))\n                    inputs.append(f\"{query} </s> {preview}\")\n\n                enc = self._tokenizer(inputs, truncation=True, padding=True, return_tensors=\"pt\")\n                # Move tensors to model device if possible\n                try:\n                    import torch as _torch\n                    device = next(self._model.parameters()).device\n                    enc = {k: v.to(device) for k, v in enc.items()}\n                    with _torch.no_grad():\n                        logits = self._model(**enc).logits\n                        # Assume binary classification; use positive class prob if present\n                        import torch.nn.functional as F\n                        probs = F.softmax(logits, dim=-1)\n                        scores = probs[:, -1].cpu().numpy()\n                except Exception:\n                    # Fallback: treat logits as scores if any\n                    try:\n                        logits = self._model(**enc).logits\n                        scores = logits.mean(dim=-1).cpu().numpy()\n                    except Exception:\n                        return results\n\n                scored = list(zip(scores.tolist(), results))\n                scored.sort(key=lambda x: x[0], reverse=True)\n                return [r for _, r in scored]\n            except Exception:\n                return results\n\n        ranked = await loop.run_in_executor(None, _sync_rerank)\n        return ranked"
+      },
+      "b": {
+        "file": "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\services\\reranker.py",
+        "name": "_sync_rerank",
+        "body": "        def _sync_rerank():\n            try:\n                self._ensure_loaded()\n                if self._model is None or self._tokenizer is None:\n                    return results\n\n                # Prepare pairwise inputs: [query || candidate_text]\n                inputs = []\n                for r in results:\n                    # Heuristic: prefer short preview if present, else file path\n                    preview = getattr(r, \"preview_text\", None) or getattr(r, \"text\", None) or str(getattr(r, \"file_path\", \"\"))\n                    inputs.append(f\"{query} </s> {preview}\")\n\n                enc = self._tokenizer(inputs, truncation=True, padding=True, return_tensors=\"pt\")\n                # Move tensors to model device if possible\n                try:\n                    import torch as _torch\n                    device = next(self._model.parameters()).device\n                    enc = {k: v.to(device) for k, v in enc.items()}\n                    with _torch.no_grad():\n                        logits = self._model(**enc).logits\n                        # Assume binary classification; use positive class prob if present\n                        import torch.nn.functional as F\n                        probs = F.softmax(logits, dim=-1)\n                        scores = probs[:, -1].cpu().numpy()\n                except Exception:\n                    # Fallback: treat logits as scores if any\n                    try:\n                        logits = self._model(**enc).logits\n                        scores = logits.mean(dim=-1).cpu().numpy()\n                    except Exception:\n                        return results\n\n                scored = list(zip(scores.tolist(), results))\n                scored.sort(key=lambda x: x[0], reverse=True)\n                return [r for _, r in scored]\n            except Exception:\n                return results"
+      },
+      "score": 0.912
+    }
+  ]
+}

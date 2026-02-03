@@ -1,0 +1,36 @@
+{
+    "name": "JavaScript/TypeScript",
+    "extensions": [
+        ".js",
+        ".jsx",
+        ".ts",
+        ".tsx",
+        ".mjs",
+        ".d.ts"
+    ],
+    "recommended_model": "jinaai/jina-embeddings-v3",
+    "dependencies": [
+        {
+            "name": "TypeScript LSP",
+            "check_cmd": "typescript-language-server --version",
+            "install_cmd": "npm install -g typescript-language-server typescript"
+        }
+    ],
+    "tools": [
+        "ctags"
+    ],
+    "rag_guard": {
+        "ignore_patterns": [
+            "node_modules",
+            "dist",
+            "build",
+            "coverage",
+            "*.test.ts",
+            "*.spec.ts",
+            "*.test.js",
+            "*.spec.js",
+            "package-lock.json",
+            "yarn.lock"
+        ]
+    }
+}

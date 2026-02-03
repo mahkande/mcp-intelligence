@@ -1,0 +1,871 @@
+{
+  "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\auto_indexer.py": {
+    "imports": [
+      "asyncio",
+      "database",
+      "indexer",
+      "loguru",
+      "os",
+      "pathlib",
+      "time"
+    ],
+    "classes": [
+      "AutoIndexer",
+      "SearchTriggeredIndexer",
+      "PeriodicIndexChecker"
+    ],
+    "functions": [
+      "__init__",
+      "get_staleness_info",
+      "__init__",
+      "get_search_stats",
+      "__init__",
+      "time_until_next_check"
+    ],
+    "lines": 299
+  },
+  "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\boilerplate.py": {
+    "imports": [
+      "typing"
+    ],
+    "classes": [
+      "BoilerplateFilter"
+    ],
+    "functions": [
+      "is_boilerplate",
+      "get_penalty"
+    ],
+    "lines": 186
+  },
+  "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\config_utils.py": {
+    "imports": [
+      "json",
+      "loguru",
+      "os",
+      "pathlib",
+      "stat",
+      "typing"
+    ],
+    "classes": [
+      "ConfigManager"
+    ],
+    "functions": [
+      "get_openrouter_api_key",
+      "save_openrouter_api_key",
+      "delete_openrouter_api_key",
+      "get_openai_api_key",
+      "save_openai_api_key",
+      "delete_openai_api_key",
+      "get_preferred_llm_provider",
+      "save_preferred_llm_provider",
+      "get_config_file_path",
+      "__init__",
+      "_ensure_config_dir",
+      "_set_secure_permissions",
+      "_mask_sensitive_value",
+      "load_config",
+      "save_config",
+      "get_value",
+      "set_value",
+      "delete_value"
+    ],
+    "lines": 395
+  },
+  "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\connection_pool.py": {
+    "imports": [
+      "asyncio",
+      "chromadb",
+      "collections.abc",
+      "contextlib",
+      "dataclasses",
+      "exceptions",
+      "loguru",
+      "pathlib",
+      "sqlite3",
+      "time",
+      "typing"
+    ],
+    "classes": [
+      "PooledConnection",
+      "ChromaConnectionPool"
+    ],
+    "functions": [
+      "age",
+      "idle_time",
+      "__init__",
+      "_is_connection_valid",
+      "get_stats",
+      "_validate_connection",
+      "_connections",
+      "_max_connections",
+      "_min_connections"
+    ],
+    "lines": 379
+  },
+  "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\context_injector.py": {
+    "imports": [
+      "loguru",
+      "re",
+      "typing"
+    ],
+    "classes": [],
+    "functions": [
+      "sanitize",
+      "append_snippet"
+    ],
+    "lines": 125
+  },
+  "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\directory_index.py": {
+    "imports": [
+      "collections",
+      "json",
+      "loguru",
+      "models",
+      "pathlib",
+      "typing"
+    ],
+    "classes": [
+      "DirectoryIndex"
+    ],
+    "functions": [
+      "__init__",
+      "load",
+      "save",
+      "add_directory",
+      "add_file",
+      "get_directory",
+      "get_files_in_directory",
+      "get_subdirectories",
+      "get_root_directories",
+      "delete_directory",
+      "delete_file",
+      "rebuild_from_files",
+      "get_stats",
+      "reset"
+    ],
+    "lines": 318
+  },
+  "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\embeddings.py": {
+    "imports": [
+      "aiofiles",
+      "chromadb.utils",
+      "concurrent.futures",
+      "exceptions",
+      "hashlib",
+      "json",
+      "loguru",
+      "multiprocessing",
+      "os",
+      "pathlib",
+      "sentence_transformers"
+    ],
+    "classes": [
+      "EmbeddingCache",
+      "CodeBERTEmbeddingFunction",
+      "BatchEmbeddingProcessor"
+    ],
+    "functions": [
+      "_configure_tokenizers_parallelism",
+      "create_embedding_function",
+      "__init__",
+      "_hash_content",
+      "_add_to_memory_cache",
+      "clear_memory_cache",
+      "get_cache_stats",
+      "__init__",
+      "name",
+      "__call__",
+      "_generate_embeddings",
+      "__init__",
+      "get_stats"
+    ],
+    "lines": 362
+  },
+  "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\exceptions.py": {
+    "imports": [
+      "typing"
+    ],
+    "classes": [
+      "MCPCodeIntelligenceError",
+      "DatabaseError",
+      "DatabaseInitializationError",
+      "DatabaseNotInitializedError",
+      "ConnectionPoolError",
+      "DocumentAdditionError",
+      "SearchError",
+      "IndexCorruptionError",
+      "RustPanicError",
+      "ParsingError",
+      "EmbeddingError",
+      "ConfigurationError",
+      "ProjectError",
+      "ProjectNotFoundError",
+      "ProjectInitializationError"
+    ],
+    "functions": [
+      "__init__"
+    ],
+    "lines": 102
+  },
+  "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\factory.py": {
+    "imports": [
+      "auto_indexer",
+      "cli.output",
+      "collections.abc",
+      "config.settings",
+      "database",
+      "dataclasses",
+      "embeddings",
+      "functools",
+      "indexer",
+      "loguru",
+      "pathlib",
+      "project",
+      "search",
+      "typer",
+      "typing"
+    ],
+    "classes": [
+      "ComponentBundle",
+      "ComponentFactory",
+      "DatabaseContext",
+      "ConfigurationService"
+    ],
+    "functions": [
+      "handle_cli_errors",
+      "create_project_manager",
+      "load_config",
+      "create_embedding_function",
+      "create_database",
+      "create_indexer",
+      "create_search_engine",
+      "create_auto_indexer",
+      "__init__",
+      "decorator",
+      "__init__",
+      "project_manager",
+      "config",
+      "ensure_initialized",
+      "reload_config",
+      "save_config",
+      "sync_wrapper"
+    ],
+    "lines": 322
+  },
+  "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\formatters.py": {
+    "imports": [
+      "__future__",
+      "json",
+      "mcp.types",
+      "pathlib",
+      "typing",
+      "urllib.parse"
+    ],
+    "classes": [],
+    "functions": [
+      "_uri_to_path",
+      "format_locations",
+      "format_definition_response",
+      "format_references_response",
+      "_extract_hover_text",
+      "format_hover_response",
+      "format_completions_response",
+      "format_lsp_error"
+    ],
+    "lines": 224
+  },
+  "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\git.py": {
+    "imports": [
+      "loguru",
+      "pathlib",
+      "subprocess"
+    ],
+    "classes": [
+      "GitError",
+      "GitNotAvailableError",
+      "GitNotRepoError",
+      "GitReferenceError",
+      "GitManager"
+    ],
+    "functions": [
+      "__init__",
+      "is_git_available",
+      "is_git_repo",
+      "get_changed_files",
+      "get_diff_files",
+      "ref_exists",
+      "get_current_branch"
+    ],
+    "lines": 380
+  },
+  "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\git_hooks.py": {
+    "imports": [
+      "loguru",
+      "os",
+      "pathlib",
+      "subprocess",
+      "sys"
+    ],
+    "classes": [
+      "GitHookManager",
+      "GitChangeDetector"
+    ],
+    "functions": [
+      "__init__",
+      "is_git_repo",
+      "install_hooks",
+      "uninstall_hooks",
+      "_install_hook",
+      "_uninstall_hook",
+      "_generate_hook_script",
+      "_integrate_with_existing_hook",
+      "_remove_from_existing_hook",
+      "get_hook_status",
+      "get_changed_files_since_commit",
+      "get_changed_files_in_last_commit",
+      "should_trigger_reindex"
+    ],
+    "lines": 348
+  },
+  "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\guards.py": {
+    "imports": [
+      "loguru",
+      "models",
+      "pathlib",
+      "re",
+      "typing"
+    ],
+    "classes": [
+      "RAGGuard"
+    ],
+    "functions": [
+      "__init__",
+      "set_active_files",
+      "should_index_path",
+      "should_index_content",
+      "is_low_signal_chunk",
+      "apply_search_penalties",
+      "filter_scope"
+    ],
+    "lines": 179
+  },
+  "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\indexer.py": {
+    "imports": [
+      "analysis.collectors.base",
+      "analysis.collectors.complexity",
+      "analysis.metrics",
+      "analysis.trends",
+      "asyncio",
+      "concurrent.futures",
+      "config.defaults",
+      "config.settings",
+      "database",
+      "datetime",
+      "directory_index",
+      "exceptions",
+      "fnmatch",
+      "guards",
+      "hashlib",
+      "json",
+      "loguru",
+      "models",
+      "multiprocessing",
+      "onnxruntime",
+      "os",
+      "packaging",
+      "parsers.registry",
+      "pathlib",
+      "relationships",
+      "scheduler",
+      "subprocess",
+      "sys",
+      "time",
+      "traceback",
+      "typing",
+      "utils.gitignore",
+      "utils.monorepo"
+    ],
+    "classes": [
+      "SemanticIndexer"
+    ],
+    "functions": [
+      "cleanup_stale_locks",
+      "_parse_file_standalone",
+      "__init__",
+      "_default_collectors",
+      "_collect_metrics",
+      "_estimate_cognitive_complexity",
+      "_estimate_cyclomatic_complexity",
+      "_estimate_nesting_depth",
+      "_load_index_metadata",
+      "_save_index_metadata",
+      "_prioritize_files",
+      "_get_git_modified_files",
+      "_calculate_file_hash",
+      "_needs_reindexing",
+      "_find_indexable_files",
+      "_scan_files_sync",
+      "_should_index_file",
+      "_should_ignore_path",
+      "add_ignore_pattern",
+      "remove_ignore_pattern",
+      "get_ignore_patterns",
+      "get_index_version",
+      "needs_reindex_for_version",
+      "_build_chunk_hierarchy",
+      "_write_indexing_run_header",
+      "_apply_onnx_thread_limits",
+      "_restore_onnx_thread_limits",
+      "score_file"
+    ],
+    "lines": 1941
+  },
+  "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\interfaces.py": {
+    "imports": [
+      "__future__",
+      "models",
+      "typing"
+    ],
+    "classes": [
+      "QueryProcessor",
+      "RerankerService",
+      "ResilienceManager"
+    ],
+    "functions": [],
+    "lines": 48
+  },
+  "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\llm_client.py": {
+    "imports": [
+      "collections.abc",
+      "context_injector",
+      "exceptions",
+      "httpx",
+      "json",
+      "loguru",
+      "os",
+      "re",
+      "typing"
+    ],
+    "classes": [
+      "LLMClient"
+    ],
+    "functions": [
+      "__init__",
+      "_format_results_for_analysis",
+      "_parse_ranking_response"
+    ],
+    "lines": 804
+  },
+  "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\llm_factory.py": {
+    "imports": [
+      "config_utils",
+      "core.project",
+      "llm_client",
+      "loguru",
+      "pathlib",
+      "typing"
+    ],
+    "classes": [],
+    "functions": [
+      "wire_llm_to_server"
+    ],
+    "lines": 79
+  },
+  "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\lsp_proxy.py": {
+    "imports": [
+      "__future__",
+      "asyncio",
+      "json",
+      "logging",
+      "os",
+      "pathlib",
+      "typing"
+    ],
+    "classes": [
+      "_LSPProcess",
+      "LSPManager"
+    ],
+    "functions": [
+      "get_manager",
+      "__init__",
+      "__init__",
+      "_load_config",
+      "is_available"
+    ],
+    "lines": 271
+  },
+  "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\models.py": {
+    "imports": [
+      "dataclasses",
+      "hashlib",
+      "pathlib",
+      "pydantic",
+      "typing"
+    ],
+    "classes": [
+      "CodeChunk",
+      "SearchResult",
+      "IndexStats",
+      "Directory",
+      "ProjectInfo",
+      "Config",
+      "Config"
+    ],
+    "functions": [
+      "__post_init__",
+      "id",
+      "line_count",
+      "to_dict",
+      "from_dict",
+      "line_count",
+      "location",
+      "calculate_quality_score",
+      "to_dict",
+      "to_dict",
+      "__post_init__",
+      "id",
+      "to_dict",
+      "from_dict",
+      "to_dict"
+    ],
+    "lines": 422
+  },
+  "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\project.py": {
+    "imports": [
+      "config.defaults",
+      "config.settings",
+      "exceptions",
+      "json",
+      "loguru",
+      "models",
+      "os",
+      "pathlib",
+      "shutil",
+      "utils.gitignore",
+      "utils.gitignore_updater"
+    ],
+    "classes": [
+      "ProjectManager"
+    ],
+    "functions": [
+      "__init__",
+      "_detect_project_root",
+      "is_initialized",
+      "initialize",
+      "load_config",
+      "save_config",
+      "config",
+      "detect_languages",
+      "count_indexable_files",
+      "get_project_info",
+      "_iter_source_files",
+      "_should_ignore_path"
+    ],
+    "lines": 372
+  },
+  "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\relationships.py": {
+    "imports": [
+      "ast",
+      "asyncio",
+      "collections",
+      "datetime",
+      "json",
+      "loguru",
+      "models",
+      "pathlib",
+      "re",
+      "rich.console",
+      "rich.progress",
+      "time",
+      "typing"
+    ],
+    "classes": [
+      "RelationshipStore"
+    ],
+    "functions": [
+      "extract_function_calls",
+      "extract_chunk_name",
+      "__init__",
+      "_compute_caller_relationships",
+      "load",
+      "exists",
+      "invalidate"
+    ],
+    "lines": 534
+  },
+  "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\scheduler.py": {
+    "imports": [
+      "loguru",
+      "pathlib",
+      "platform",
+      "subprocess",
+      "sys"
+    ],
+    "classes": [
+      "SchedulerManager"
+    ],
+    "functions": [
+      "__init__",
+      "install_scheduled_task",
+      "uninstall_scheduled_task",
+      "_install_cron_job",
+      "_uninstall_cron_job",
+      "_install_windows_task",
+      "_uninstall_windows_task",
+      "get_scheduled_task_status",
+      "_get_cron_status",
+      "_get_windows_task_status"
+    ],
+    "lines": 333
+  },
+  "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\search.py": {
+    "imports": [
+      "aiofiles",
+      "asyncio",
+      "auto_indexer",
+      "boilerplate",
+      "collections",
+      "config.constants",
+      "database",
+      "exceptions",
+      "git",
+      "guards",
+      "interfaces",
+      "loguru",
+      "models",
+      "pathlib",
+      "re",
+      "relationships",
+      "services.reranker",
+      "services.resilience",
+      "time",
+      "torch",
+      "transformers",
+      "typing"
+    ],
+    "classes": [
+      "SemanticSearchEngine",
+      "_DefaultQP"
+    ],
+    "functions": [
+      "__init__",
+      "_is_rust_panic_error",
+      "_is_corruption_error",
+      "_preprocess_query",
+      "_get_adaptive_threshold",
+      "analyze_query",
+      "suggest_related_queries",
+      "_calculate_result_quality",
+      "_extract_function_content",
+      "clear_cache",
+      "get_cache_info"
+    ],
+    "lines": 1187
+  },
+  "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\tool_registry.py": {
+    "imports": [
+      "importlib",
+      "inspect",
+      "json",
+      "mcp.types",
+      "pathlib",
+      "re",
+      "typing"
+    ],
+    "classes": [],
+    "functions": [
+      "get_tool_definitions",
+      "get_mcp_tools",
+      "get_llm_tool_specs"
+    ],
+    "lines": 593
+  },
+  "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\watcher.py": {
+    "imports": [
+      "asyncio",
+      "collections.abc",
+      "concurrent.futures",
+      "config.settings",
+      "database",
+      "indexer",
+      "loguru",
+      "pathlib",
+      "time",
+      "watchdog.events",
+      "watchdog.observers"
+    ],
+    "classes": [
+      "CodeFileHandler",
+      "FileWatcher",
+      "WatcherManager"
+    ],
+    "functions": [
+      "__init__",
+      "should_process_file",
+      "on_modified",
+      "on_created",
+      "on_deleted",
+      "on_moved",
+      "_schedule_change",
+      "__init__",
+      "_get_ignore_patterns",
+      "__init__",
+      "is_watching"
+    ],
+    "lines": 323
+  },
+  "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\__init__.py": {
+    "imports": [
+      "mcp_code_intelligence.core.git"
+    ],
+    "classes": [],
+    "functions": [],
+    "lines": 19
+  },
+  "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\database\\base.py": {
+    "imports": [
+      "abc",
+      "models",
+      "pathlib",
+      "typing"
+    ],
+    "classes": [
+      "EmbeddingFunction",
+      "VectorDatabase"
+    ],
+    "functions": [
+      "__call__"
+    ],
+    "lines": 181
+  },
+  "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\database\\chroma.py": {
+    "imports": [
+      "asyncio",
+      "base",
+      "chromadb",
+      "exceptions",
+      "json",
+      "loguru",
+      "models",
+      "pathlib",
+      "recovery",
+      "sqlite3",
+      "typing"
+    ],
+    "classes": [
+      "ChromaVectorDatabase"
+    ],
+    "functions": [
+      "__init__",
+      "_build_where_clause",
+      "_metadata_to_chunk"
+    ],
+    "lines": 878
+  },
+  "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\database\\pooling.py": {
+    "imports": [
+      "asyncio",
+      "base",
+      "chroma",
+      "connection_pool",
+      "exceptions",
+      "json",
+      "loguru",
+      "models",
+      "pathlib",
+      "shutil",
+      "time",
+      "typing"
+    ],
+    "classes": [
+      "PooledChromaVectorDatabase"
+    ],
+    "functions": [
+      "__init__",
+      "get_pool_stats"
+    ],
+    "lines": 502
+  },
+  "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\database\\recovery.py": {
+    "imports": [
+      "exceptions",
+      "loguru",
+      "pathlib",
+      "pickle",
+      "shutil",
+      "sqlite3",
+      "time"
+    ],
+    "classes": [
+      "DatabaseRecoveryMixin"
+    ],
+    "functions": [],
+    "lines": 194
+  },
+  "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\database\\__init__.py": {
+    "imports": [
+      "base",
+      "chroma",
+      "pooling"
+    ],
+    "classes": [],
+    "functions": [],
+    "lines": 12
+  },
+  "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\services\\reranker.py": {
+    "imports": [
+      "__future__",
+      "asyncio",
+      "interfaces",
+      "models",
+      "torch",
+      "torch.nn.functional",
+      "transformers",
+      "typing"
+    ],
+    "classes": [
+      "LazyHFReRanker",
+      "NoopReranker"
+    ],
+    "functions": [
+      "get_global_reranker",
+      "__init__",
+      "_ensure_loaded",
+      "_sync_rerank"
+    ],
+    "lines": 117
+  },
+  "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\services\\resilience.py": {
+    "imports": [
+      "__future__",
+      "asyncio",
+      "exceptions",
+      "interfaces",
+      "loguru",
+      "random",
+      "time",
+      "typing"
+    ],
+    "classes": [
+      "ServiceUnavailableError",
+      "SimpleResilienceManager"
+    ],
+    "functions": [
+      "__init__",
+      "_open_circuit",
+      "_close_circuit",
+      "_half_open",
+      "_is_open",
+      "_is_retriable"
+    ],
+    "lines": 188
+  },
+  "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src\\mcp_code_intelligence\\core\\services\\__init__.py": {
+    "imports": [
+      "reranker"
+    ],
+    "classes": [],
+    "functions": [],
+    "lines": 5
+  }
+}

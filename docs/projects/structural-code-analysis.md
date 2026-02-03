@@ -1,0 +1,219 @@
+# Project: Structural Code Analysis
+
+> **Status**: Active | **Phase**: 4 of 5 | **Target**: v0.17.0 - v0.21.0
+
+## Quick Links
+
+| Resource | URL |
+|----------|-----|
+| **GitHub Project** | https://github.com/users/bobmatnyc/projects/13 |
+| **Roadmap View** | https://github.com/users/bobmatnyc/projects/13/views/1 |
+| **Milestones** | https://github.com/bobmatnyc/mcp-code-intelligence/milestones |
+| **All Issues** | https://github.com/bobmatnyc/mcp-code-intelligence/issues |
+| **Design Document** | [structural-analysis-design.md](../research/mcp-code-intelligence-structural-analysis-design.md) |
+| **PR Workflow** | [pr-workflow-guide.md](../development/pr-workflow-guide.md) |
+
+## Overview
+
+Add structural code analysis capabilities to mcp-code-intelligence, enabling quality-aware code search and codebase health visualization.
+
+### Key Features
+
+- **Structural Metrics**: Cognitive/cyclomatic complexity, nesting depth, coupling
+- **Code Smell Detection**: Long methods, deep nesting, god classes, empty catches
+- **Quality Gates**: Configurable thresholds with SARIF output for CI/CD
+- **Visualization Export**: JSON/HTML reports for dashboards
+- **Search Integration**: Quality-aware ranking and filtering
+
+## Timeline
+
+| Phase | Milestone | Start | Due | Issues | Status |
+|-------|-----------|-------|-----|--------|--------|
+| 1 | v0.17.0 - Core Metrics | Dec 10 | Dec 23, 2024 | #1-11 | ✅ Done |
+| 2 | v0.18.0 - Quality Gates | Dec 24 | Dec 30, 2024 | #12-18 | ✅ Done |
+| 3 | v0.19.0 - Cross-File Analysis | Dec 31 | Jan 6, 2025 | #19-26 | ✅ Done |
+| 4 | v0.20.0 - Visualization Export | Jan 7 | Jan 13, 2025 | #27-33 | 🎯 Ready |
+| 5 | v0.21.0 - Search Integration | Jan 20 | Feb 3, 2025 | #34-37 | 📋 Backlog |
+
+## Workflow
+
+```
+📋 Backlog → 🎯 Ready → 🔧 In Progress → 👀 In Review → ✅ Done
+```
+
+### Branch Naming
+
+```
+feature/<issue-number>-<short-description>
+```
+
+Example: `feature/2-metric-dataclasses`
+
+## Critical Path
+
+The minimum timeline is determined by these dependent issues:
+
+```
+#2 (dataclasses) → #8 (integrator) → #10 (CLI) → #14 (smells) → #35 (filters) → #37 (MCP)
+```
+
+**Start with**: Issue #2 - no blockers, on critical path
+
+## Phase Details
+
+### Phase 1: Core Metrics (v0.17.0)
+
+**Goal**: Tier 1 collectors integrated into indexer with basic analysis command
+
+| Issue | Title | Dependencies | Status |
+|-------|-------|--------------|--------|
+| #1 | [EPIC] Core Metrics | - | ✅ Done |
+| #2 | Create metric dataclasses | None | ✅ Done |
+| #3 | Cognitive Complexity Collector | #2 | ✅ Done |
+| #4 | Cyclomatic Complexity Collector | #2 | ✅ Done |
+| #5 | Nesting Depth Collector | #2 | ✅ Done |
+| #6 | Parameter Count Collector | #2 | ✅ Done |
+| #7 | Method Count Collector | #2 | ✅ Done |
+| #8 | Integrate collectors with indexer | #2-7 | ✅ Done |
+| #9 | Extend ChromaDB metadata | #2 | ✅ Done |
+| #10 | Create `analyze --quick` CLI | #8, #9 | ✅ Done |
+| #11 | Console reporter | #10 | ✅ Done |
+
+**Validation Criteria**:
+- Metrics match SonarQube on sample projects
+- <10ms overhead per 1000 LOC
+
+### Phase 2: Quality Gates (v0.18.0)
+
+**Goal**: Threshold configuration, CI integration, diff-aware analysis
+
+| Issue | Title | Dependencies | Status |
+|-------|-------|--------------|--------|
+| #12 | [EPIC] Quality Gates | Phase 1 | ✅ Done |
+| #13 | Threshold configuration system | #2 | ✅ Done |
+| #14 | Code smell detection | #8, #13 | ✅ Done |
+| #15 | SARIF output format | #10, #14 | ✅ Done |
+| #16 | `--fail-on-smell` exit codes | #14, #15 | ✅ Done |
+| #17 | Diff-aware analysis | #10 | ✅ Done |
+| #18 | Baseline comparison | #17 | ✅ Done |
+
+### Phase 3: Cross-File Analysis (v0.19.0)
+
+**Goal**: Coupling metrics, dependency graph, SQLite storage
+
+| Issue | Title | Dependencies | Status |
+|-------|-------|--------------|--------|
+| #19 | [EPIC] Cross-File Analysis | Phase 2 | ✅ Done |
+| #20 | Efferent Coupling Collector | #2, #8 | ✅ Done |
+| #21 | Afferent Coupling Collector | #20 | ✅ Done |
+| #22 | Instability Index | #20, #21 | ✅ Done |
+| #23 | Circular dependency detection | #20 | ✅ Done |
+| #24 | SQLite metrics store | #2 | ✅ Done |
+| #25 | Trend tracking | #24 | ✅ Done |
+| #26 | LCOM4 cohesion metric | #2, #8 | ✅ Done |
+
+### Phase 4: Visualization Export (v0.20.0)
+
+**Goal**: JSON/HTML reports, Halstead metrics, tech debt estimation
+
+| Issue | Title | Dependencies | Status |
+|-------|-------|--------------|--------|
+| #27 | [EPIC] Visualization Export | Phase 3 | 🎯 Ready |
+| #28 | JSON export schema | #2 | 🎯 Ready |
+| #29 | JSON exporter | #28, #10 | 🎯 Ready |
+| #30 | HTML standalone report | #29 | 🎯 Ready |
+| #31 | Halstead metrics collector | #2, #8 | 🎯 Ready |
+| #32 | Technical debt estimation | #14, #24 | 🎯 Ready |
+| #33 | `status --metrics` command | #10, #24 | 🎯 Ready |
+
+### Phase 5: Search Integration (v0.21.0)
+
+**Goal**: Quality-aware search ranking, MCP tool exposure, LLM interpretation
+
+| Issue | Title | Dependencies | Status |
+|-------|-------|--------------|--------|
+| #34 | [EPIC] Search Integration | Phase 4 | 📋 Backlog |
+| #35 | Quality filters for search | #10, #14 | 📋 Backlog |
+| #36 | Quality-aware ranking | #35 | 📋 Backlog |
+| #37 | Expose as MCP tools | #10, #35 | 📋 Backlog |
+| #38 | LLM interpretation of analysis | #10, #14, #29, #37 | 📋 Backlog |
+
+## Project Settings
+
+### GitHub Project Configuration
+
+- **Project ID**: 13
+- **Project URL**: https://github.com/users/bobmatnyc/projects/13
+- **Visibility**: Public
+- **Owner**: @bobmatnyc
+
+### Custom Fields
+
+| Field | Type | Purpose |
+|-------|------|---------|
+| Start Date | Date | When work begins |
+| Target Date | Date | Due date for completion |
+| Workflow | Single Select | PR-based workflow status |
+
+### Workflow Options
+
+| Option | Color | Description |
+|--------|-------|-------------|
+| 📋 Backlog | Gray | Dependencies not met |
+| 🎯 Ready | Blue | Ready to implement |
+| 🔧 In Progress | Yellow | Actively being developed |
+| 👀 In Review | Purple | PR awaiting review |
+| ✅ Done | Green | PR merged, complete |
+
+## Architecture
+
+### New Module Structure
+
+```
+src/mcp_code_intelligence/
+├── analysis/
+│   ├── __init__.py
+│   ├── metrics.py              # Metric dataclasses
+│   ├── collectors/
+│   │   ├── __init__.py
+│   │   ├── base.py             # MetricCollector ABC
+│   │   ├── complexity.py       # Cognitive/cyclomatic
+│   │   ├── coupling.py         # Efferent/afferent
+│   │   ├── cohesion.py         # LCOM4
+│   │   ├── smells.py           # Code smell detection
+│   │   └── halstead.py         # Halstead metrics
+│   ├── aggregators/
+│   │   ├── __init__.py
+│   │   ├── file.py             # File-level aggregation
+│   │   ├── project.py          # Project-level aggregation
+│   │   └── trends.py           # Historical tracking
+│   ├── reporters/
+│   │   ├── __init__.py
+│   │   ├── console.py          # Rich terminal output
+│   │   ├── json.py             # JSON export
+│   │   ├── sarif.py            # SARIF for CI
+│   │   └── html.py             # Standalone report
+│   ├── visualizer/
+│   │   ├── __init__.py
+│   │   ├── exporter.py         # Viz data export
+│   │   └── schemas.py          # Visualization schemas
+│   └── thresholds.py           # Threshold management
+├── cli/
+│   └── commands/
+│       └── analyze.py          # New analyze command
+```
+
+## References
+
+- [Design Document](../research/mcp-code-intelligence-structural-analysis-design.md) - Full technical specification
+- [PR Workflow Guide](../development/pr-workflow-guide.md) - Branch naming, commit format
+- [GitHub Milestones Setup](../development/github-milestones-setup.md) - Automation scripts
+- [Dependency Graph](../development/dependency-graph.txt) - Visual dependency map
+
+---
+
+**Created**: December 9, 2024
+**Last Updated**: December 11, 2024
+**Assignee**: @bobmatnyc
+
+

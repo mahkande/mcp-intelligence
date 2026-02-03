@@ -1,0 +1,41 @@
+# Roo Code Search Strategy (Symbolic vs Semantic vs Memory)
+
+Sistemin otonom hafızasını korumak ve en doğru sonucu en az kaynakla üretmek için bu hiyerarşiyi takip edin:
+
+## 1. Categorize the User Request
+
+### A. Symbolic/Structural Questions (The "WHERE" and "WHAT" questions)
+*   **Examples:** "Where is the `UserRepository` class defined?", "Show me the `processPayment` function.", "What methods are in the `AuthService`?", "Which widget defines the login button?"
+*   **Action:** **ALWAYS use `find_symbol` first.**
+*   **Reason:** It uses exact indexing (LSP-style) and returns 100% accurate results in milliseconds. Vector search might return partial or irrelevant "similar" code.
+
+### B. Conceptual/Behavioral Questions (The "HOW" and "WHY" questions)
+*   **Examples:** "How does the authentication flow work?", "Where is error handling implemented for database connections?", "How are user sessions managed?", "Find code that interacts with the Stripe API."
+*   **Action:** **Use `search_code` (Vector Search).**
+*   **Reason:** These concepts are spread across multiple files and use different wording. Semantic search (Jina v3) will find the "meaning" of the request.
+
+### C. Pattern/Duplicate Search
+*   **Examples:** "Find other classes that look like this one.", "Is there any other code using this specific data fetching pattern?"
+*   **Action:** **Use `search_similar`.**
+*   **Reason:** Code-to-code similarity is best handled by the transformer model.
+
+### D. Complex/Hybrid Questions
+*   **Example:** "Find the `PaymentService` and explain how it handles refunds."
+*   **Action:** 
+    1.  Call `find_symbol(name="PaymentService")` to pinpoint the definition.
+    2.  Read the file context.
+    3.  If needed, call `search_code(query="refund logic in PaymentService")` to find related helper functions or middlewares.
+
+## 3. Language Specific Rules
+*   **Python Projeleri:** Sembol takibi (Go to definition, search symbols) için mutlaka **Pyright** (pylance-mcp-server) kullanın. Universal-ctags'i sadece çok hızlı ve genel bakış gerektiren durumlarda tercih edin.
+*   **Dart/Flutter:** Sembol takibi için **universal-ctags** ve yapısal analiz (tree-sitter) ikilisini kullanın.
+
+## 4. Optimization Rules
+*   **Memory First:** Bir göreve başlamadan önce veya bağlam kaybedildiğinde, geçmiş kararları hatırlamak için mutlaka `memory` kayıtlarını kontrol edin.
+*   **Bypass Vector Search:** If you have an exact symbol name, NEVER use `search_code` as your first step. Use `find_symbol`.
+*   **Reranking:** When using `search_code`, the results are already reranked by a Neural Reranker (Jina v2). Trust the top results.
+*   **Context is King:** Always look at the `start_line` and `file_path` returned by tools to understand the file structure before making changes.
+
+## 5. Autonomous Memory Protocol (CRITICAL)
+*   **Post-Task Log:** Her görevi tamamladığında, `memory` aracını kullanarak yaptığın işlemleri, değişen dosyaları ve önemli kararları **otomatik olarak kaydet**.
+*   **Context Recovery:** Bir sonraki soruda bağlamı yitirirsen, önce `memory` aracındaki kayıtları kontrol et.

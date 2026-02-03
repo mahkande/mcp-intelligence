@@ -1,0 +1,85 @@
+{
+  "servers": {
+    "mcp-code-intelligence": {
+      "command": "C:\\Users\\mahir\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "args": [
+        "-u",
+        "-m",
+        "mcp_code_intelligence.mcp_impl"
+      ],
+      "env": {
+        "MCP_PROJECT_ROOT": "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search",
+        "MCP_ENABLE_FILE_WATCHING": "true",
+        "PYTHONPATH": "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src",
+        "PYTHONUNBUFFERED": "1"
+      },
+      "type": "stdio"
+    },
+    "filesystem": {
+      "command": "C:\\Users\\mahir\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "args": [
+        "-u",
+        "-m",
+        "mcp_code_intelligence.servers.filesystem_server",
+        "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search"
+      ],
+      "env": {
+        "PYTHONPATH": "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src",
+        "PYTHONUNBUFFERED": "1"
+      },
+      "type": "stdio"
+    },
+    "git": {
+      "command": "C:\\Users\\mahir\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "args": [
+        "-u",
+        "-m",
+        "mcp_code_intelligence.servers.git_server",
+        "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search"
+      ],
+      "env": {
+        "PYTHONPATH": "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src",
+        "PYTHONUNBUFFERED": "1"
+      },
+      "type": "stdio"
+    },
+    "memory": {
+      "command": "C:\\Users\\mahir\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "args": [
+        "-u",
+        "-m",
+        "mcp_code_intelligence.servers.memory_server"
+      ],
+      "env": {
+        "PYTHONPATH": "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src",
+        "PYTHONUNBUFFERED": "1"
+      },
+      "type": "stdio"
+    },
+    "python-lsp": {
+      "command": "C:\\Users\\mahir\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "args": [
+        "-m",
+        "mcp_code_intelligence.servers.python_lsp_server",
+        "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search"
+      ],
+      "env": {
+        "PYTHONPATH": "C:\\Users\\mahir\\Desktop\\mcp-server\\mcp-vector-search\\src",
+        "PYTHONUNBUFFERED": "1"
+      },
+      "type": "stdio"
+    }
+  },
+  "languageLsps": [
+    "python",
+    "javascript",
+    "typescript",
+    "java",
+    "csharp",
+    "ruby",
+    "php",
+    "go",
+    "rust",
+    "kotlin"
+  ]
+}
